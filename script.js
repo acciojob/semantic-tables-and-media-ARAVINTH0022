@@ -1,10 +1,9 @@
-//your code here
 // 1. Clear body
 document.body.innerHTML = '';
 
 // --- Part 1: Semantic Table ---
 const table = document.createElement('table');
-table.border = '1'; // Optional for visibility
+table.border = '1';
 
 // Thead
 const thead = document.createElement('thead');
@@ -20,18 +19,18 @@ table.appendChild(thead);
 
 // Tbody
 const tbody = document.createElement('tbody');
-const data = [
+const students = [
     { roll: '1', name: 'Alice' },
     { roll: '2', name: 'Bob' },
     { roll: '3', name: 'Charlie' }
 ];
 
-data.forEach(item => {
+students.forEach(student => {
     const row = document.createElement('tr');
     const tdRoll = document.createElement('td');
-    tdRoll.innerText = item.roll;
+    tdRoll.innerText = student.roll;
     const tdName = document.createElement('td');
-    tdName.innerText = item.name;
+    tdName.innerText = student.name;
     row.appendChild(tdRoll);
     row.appendChild(tdName);
     tbody.appendChild(row);
@@ -44,7 +43,7 @@ const h2 = document.createElement('h2');
 h2.innerText = 'List of medias';
 document.body.appendChild(h2);
 
-// --- Part 3: Ordered List with Media ---
+// --- Part 3: Ordered List ---
 const ol = document.createElement('ol');
 
 // Item 1: Image
@@ -55,7 +54,7 @@ img.alt = 'Random image';
 li1.appendChild(img);
 ol.appendChild(li1);
 
-// Item 2: Video
+// Item 2: Video (with source element)
 const li2 = document.createElement('li');
 const video = document.createElement('video');
 video.controls = true;
